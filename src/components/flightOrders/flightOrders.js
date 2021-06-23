@@ -7,7 +7,7 @@ import * as allFlight from  '../../config/coding-assignment-schedule.json'
 
 
 
-export default function Orders() {
+export default function FlightOrders() {
 
     // get the id of the flight through the parameter
     const params = useParams()
@@ -34,7 +34,7 @@ export default function Orders() {
                 arrival: allOrders.default[item].destination,
                 day: flight.day
             }
-            console.log(orderItem)
+            // push all the respected information for a particular flight corresponding to the order into the orders array
             orders.push(orderItem)
         }
     }

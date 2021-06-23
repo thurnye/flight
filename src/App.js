@@ -1,10 +1,17 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import {far} from '@fortawesome/free-regular-svg-icons'
 import Schedule from './components/schedule/allFlights'
 import FlightOrders from './components/flightOrders/flightOrders'
 import Orders from './components/allOrders/orders'
-import './App.css';
+import './App.css'
+
+library.add(fas, far)
+
+
 
 
 function App() {
