@@ -37,9 +37,9 @@ export default function allFlights() {
 
     return (
         <>
-            <div className="navigation">
+            <div className="navigation container">
                 <p>Transport.ly <small className="text-muted">an automated air freight scheduling service</small></p>
-                <Nav.Link className="" href="/orders">VIEW ORDERS</Nav.Link>
+                <p> <small className="text-muted">Click on flight to view  orders</small></p>
             </div>
             <section className="today">
                 <div className=" card container table-responsive">
