@@ -2,7 +2,8 @@ import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Schedule from './components/schedule/allFlights'
-import Orders from './components/orders/orders'
+import FlightOrders from './components/flightOrders/flightOrders'
+import Orders from './components/allOrders/orders'
 import './App.css';
 
 
@@ -13,8 +14,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/"  exact component={Schedule}/>
-          <Route path="/orders/:flightId"  component={Orders} />
-          
+          <Route path="/orders"   component={Orders}/>
+          <Route path="/flight-orders/:flightId"  component={FlightOrders} />
         </Switch>
       </Router>
     </>

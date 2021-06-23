@@ -1,7 +1,6 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import * as allFlight from  '../../config/coding-assignment-schedule.json'
-import './allflight.css'
 
 
 
@@ -17,6 +16,7 @@ export default function allFlights() {
                 <th scope="row">{el.flight_number}</th>
                 <td>{el.departure_city}</td>
                 <td>{el.arrival_city}</td>
+                <td>view</td>
             </tr>
             today.push(todayFlight)
            
@@ -25,6 +25,7 @@ export default function allFlights() {
                 <th scope="row">{el.flight_number}</th>
                 <td>{el.departure_city}</td>
                 <td>{el.arrival_city}</td>
+                <td>view</td>
             </tr>
             nextDay.push(tomorrowFlight)
         }
@@ -32,16 +33,21 @@ export default function allFlights() {
     
     // get the flight number when the user clicks on a scheduled flight
     const handleClick = (e) => {
-        window.location.href = `/orders/${e}`
+        window.location.href = `/flight-orders/${e}`
     }
 
     return (
         <>
-            <div className="navigation container">
+            <div className="navigation ">
                 <p>Transport.ly <small className="text-muted">an automated air freight scheduling service</small></p>
-                <p> <small className="text-muted">Click on flight to view  orders</small></p>
+                <div className="link">
+                    <Nav.Link  href="/orders">view Orders</Nav.Link>
+                </div>
             </div>
             <section className="today">
+            <div className="container">
+                <p>Scheduled Flight for Day 1</p>
+            </div>
                 <div className=" card container table-responsive">
                     <table className="table table-hover">
                         <thead>
@@ -49,6 +55,7 @@ export default function allFlights() {
                                 <th scope="col">Flight No.</th>
                                 <th scope="col">Departure</th>
                                 <th scope="col">Arrival</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -72,6 +79,7 @@ export default function allFlights() {
                                 <th scope="col">Flight No.</th>
                                 <th scope="col">Departure</th>
                                 <th scope="col">Arrival</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
