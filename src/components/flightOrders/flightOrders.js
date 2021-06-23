@@ -23,6 +23,7 @@ export default function Orders() {
 
     // find all orders associated with the flight
     for( let item in allOrders.default){
+        
         if(allOrders.default[item].destination === flight.arrival_city){
 
             // get the information from the flight order and attach it to the corresponding flight.
@@ -36,16 +37,17 @@ export default function Orders() {
             console.log(orderItem)
             orders.push(orderItem)
         }
-            
     }
 
     return (
         <>
-            <div className="navigation">
+            <div className="navigation ">
                 <p>Transport.ly <small className="text-muted">an automated air freight scheduling service</small></p>
-                <Nav.Link className="" href="/">VIEW FLIGHT SCHEDULE</Nav.Link>
+                <div className="link">
+                    <Nav.Link className="" href="/">view flight schedule</Nav.Link>
+                </div>
             </div>
-            <section className="today">
+            <section className="flight-orders">
                 <div className="  container">
                     <table className="table table-hover">
                         <thead>
