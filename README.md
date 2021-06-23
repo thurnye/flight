@@ -8,12 +8,19 @@ be displayed without flight details.
 -As a user, I want the ability to drill down to view the orders on each individual flight via a button on
 the flight schedule screen.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+## How to use this project
+
+Download the project
+### `git clone  https://github.com/thurnye/flight.git` 
+
+cd into the folder
+to install the npm packages
+### run `npm install`
+
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
