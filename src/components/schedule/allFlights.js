@@ -1,31 +1,36 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import * as allFlight from  '../../config/coding-assignment-schedule.json'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
 
 export default function allFlights() {
-    const today = []
-    const nextDay = []
+    const today = [] //holds today's schedules
+    const nextDay = [] //holds nxtday schedule
 
-     allFlight.default.map(el => {
+
+     allFlight.default.forEach(el => {
         if(el.day === 1){
-            const todayFlight =  <tr onClick={(e)=> handleClick(el.flight_number)} key={el.flight_number} >
+            const todayFlight =  <tr key={el.flight_number} >
                 <th scope="row">{el.flight_number}</th>
                 <td>{el.departure_city}</td>
                 <td>{el.arrival_city}</td>
-                <td>view</td>
+                <td>
+                    <button className="btn"  onClick={(e)=> handleClick(el.flight_number)}><FontAwesomeIcon icon={["far", "eye-slash"]} /></button>
+                </td>
             </tr>
             today.push(todayFlight)
            
         }else{
-            const tomorrowFlight =  <tr onClick={()=> handleClick(el.flight_number)} key={el.flight_number}>
+            const tomorrowFlight =  <tr key={el.flight_number}>
                 <th scope="row">{el.flight_number}</th>
                 <td>{el.departure_city}</td>
                 <td>{el.arrival_city}</td>
-                <td>view</td>
+                <td>
+                    <button className="btn"  onClick={(e)=> handleClick(el.flight_number)}><FontAwesomeIcon icon={["far", "eye-slash"]} /></button>
+                </td>
             </tr>
             nextDay.push(tomorrowFlight)
         }

@@ -2,9 +2,12 @@ import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import * as allOrders from '../../config/coding-assigment-orders.json'
 
-export default function orders() {
+export default function allFlightOrders() {
 
+    // store the orderItems to be displayed in the dom
     const orders = []
+
+
     // loop through the order object and push it into the order
     for (let item in allOrders.default){
        let orderItems =  <tr key={item}>
@@ -25,9 +28,9 @@ export default function orders() {
             </div>
 
             <section className="orders">
-            <div className="container">
-                <h6>All Orders</h6>
-            </div>
+                <div className="container">
+                    <h6>All Orders</h6>
+                </div>
                 <div className="  container">
                     <table className="table table-hover">
                         <thead>
